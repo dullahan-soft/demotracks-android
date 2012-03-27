@@ -30,8 +30,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 import java.util.Map.Entry;
+import java.util.Vector;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -247,7 +247,7 @@ public class TripUploader extends AsyncTask <Long, Integer, Boolean> {
         Log.v("PostData", nameValuePairs.toString());
 
         HttpClient client = new DefaultHttpClient();
-        final String postUrl = "http://bikedatabase.sfcta.org/post/";
+        final String postUrl = "http://my-cycle-tracks.heroku.com/trip/dullahansoft";
         HttpPost postRequest = new HttpPost(postUrl);
 
         try {
@@ -304,7 +304,7 @@ public class TripUploader extends AsyncTask <Long, Integer, Boolean> {
 
     @Override
     protected void onPreExecute() {
-        Toast.makeText(mCtx.getApplicationContext(),"Submitting trip.  Thanks for using CycleTracks!", Toast.LENGTH_LONG).show();
+        Toast.makeText(mCtx.getApplicationContext(),"Submitting trip.  Thanks for using DemoTracks!", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -313,7 +313,7 @@ public class TripUploader extends AsyncTask <Long, Integer, Boolean> {
             if (result) {
                 Toast.makeText(mCtx.getApplicationContext(),"Trip uploaded successfully.", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(mCtx.getApplicationContext(),"CycleTracks couldn't upload the trip, and will retry when your next trip is completed.", Toast.LENGTH_LONG).show();
+                Toast.makeText(mCtx.getApplicationContext(),"DemoTracks couldn't upload the trip, and will retry when your next trip is completed.", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             // Just don't toast if the view has gone out of context

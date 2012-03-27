@@ -40,18 +40,18 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 
 public class MainInput extends Activity {
     private final static int MENU_USER_INFO = 0;
@@ -122,7 +122,7 @@ public class MainInput extends Activity {
 
     private void buildAlertMessageNoGps() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Your phone's GPS is disabled. CycleTracks needs GPS to determine your location.\n\nGo to System Settings now to enable GPS?")
+        builder.setMessage("Your phone's GPS is disabled. DemoTracks needs GPS to determine your location.\n\nGo to System Settings now to enable GPS?")
                .setCancelable(false)
                .setPositiveButton("GPS Settings...", new DialogInterface.OnClickListener() {
                    public void onClick(final DialogInterface dialog, final int id) {
@@ -145,8 +145,8 @@ public class MainInput extends Activity {
 
     private void showWelcomeDialog() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Please enter your personal details so we can learn a bit about you.\n\nThen, try to use CycleTracks every time you ride. Your trip routes will be sent to the SFCTA so we can plan for better biking!\n\nThanks,\nThe SFCTA CycleTracks team")
-               .setCancelable(false).setTitle("Welcome to CycleTracks!")
+        builder.setMessage("Please enter your personal details so we can learn a bit about you.\n\nThen, try to use DemoTracks every time you ride. Your trip routes will be sent to Dullahan Software so we can plan for better biking!\n\nThanks,\nThe Dullahan Software team")
+               .setCancelable(false).setTitle("Welcome to DemoTracks!")
                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                    public void onClick(final DialogInterface dialog, final int id) {
                        startActivity(new Intent(MainInput.this, UserInfoActivity.class));
